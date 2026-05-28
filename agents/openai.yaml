@@ -1,0 +1,11 @@
+interface:
+  display_name: GG → Monitor → Operating Loop
+  short_description: Active monitoring loop with sub-agent dispatch and verify-don't-trust
+  icon_small: ./assets/icon-small.svg
+  icon_large: ./assets/icon-large.png
+  brand_color: '#6366f1'
+  default_prompt: >-
+    Use the monitor skill when the user asks to monitor, watch, or tail a long-running process —
+    arm a streaming watcher, heartbeat every ~20 seconds, triage errors, dispatch reversible fixes
+    via background sub-agents, and verify each fix independently. Reference monitor/SKILL.md when
+    cross-referencing this skill.

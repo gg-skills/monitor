@@ -1,0 +1,11 @@
+**The Four Questions**
+1. Verb: babysit
+2. Object: a guard tower with a megaphone
+3. Animal: a cat staring unblinking at a mouse hole for hours because it cannot look away or it might miss the one second something actually happens
+4. Most annoying manual task: sitting in front of a scrolling log file for two hours straight, reading every line with your own eyeballs, deciding if it's an error, and then walking over to the code to fix it yourself
+
+**The Reality**
+This skill is basically a night security guard for your computer. You know the person who sits in a booth watching twelve screens, waiting for one of them to show something interesting? That's this skill. It stares at a log file or a process output, waits for ERROR or FATAL or 500 to scroll by, and then jumps into action. Not passive watching — active babysitting. It will fix the problems it knows how to fix (code edits, cache clears, config tweaks), call in backup (sub-agents) for the harder ones, and tattle to you about the stuff it absolutely cannot touch (production databases, sharedinfra disasters).
+
+**The Superpower and the Mockery**
+It thinks it is an autonomous ninja but it is really just a very dedicated babysitter with a walkie-talkie. It will watch your process, heartbeat every 20 seconds to prove it hasn't fallen asleep, dispatch a sous-chef when the kitchen catches fire, verify the fix worked, and then write you a nice report about who did what. It has zero judgment about whether a "fast 502" means "upstream is dead" versus "upstream was on a coffee break" — it just knows the number changed and it is YOUR job to tell it what to do about it.
