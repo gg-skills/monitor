@@ -6,7 +6,7 @@
  * Verifies a monitoring session against the 9-item Monitor Quality Checklist.
  * 
  * Usage:
- *   npx tsx skills/monitor/scripts/check-monitor-completeness.ts --phase <phase>
+ *   npx tsx .agents/skills/monitor/scripts/check-monitor-completeness.ts --phase <phase>
  */
 
 import { argv } from "process";

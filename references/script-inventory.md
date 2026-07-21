@@ -7,7 +7,7 @@ Complete reference for the five TypeScript companion scripts in `scripts/`. All 
 Generates a `grep -E --line-buffered` pattern from the most frequent error tokens in a log sample.
 
 ```bash
-npx tsx skills/monitor/scripts/monitor-suggest-filter.ts \
+npx tsx .agents/skills/monitor/scripts/monitor-suggest-filter.ts \
   /path/to/log 500
 ```
 
@@ -24,7 +24,7 @@ npx tsx skills/monitor/scripts/monitor-suggest-filter.ts \
 
 ```bash
 cat /path/to/log | grep -v "NoisyKnownLine" \
-  | npx tsx skills/monitor/scripts/monitor-suggest-filter.ts -
+  | npx tsx .agents/skills/monitor/scripts/monitor-suggest-filter.ts -
 ```
 
 ## monitor-classify-error.ts
@@ -33,7 +33,7 @@ Classifies a single log line into `crash`, `persistent-warning`, `transient`, or
 
 ```bash
 echo "ERROR connect ECONNREFUSED 127.0.0.1:3001" \
-  | npx tsx skills/monitor/scripts/monitor-classify-error.ts
+  | npx tsx .agents/skills/monitor/scripts/monitor-classify-error.ts
 ```
 
 | Argument | Required | Default | Description |
@@ -62,11 +62,11 @@ Claims or releases file-allowlist locks to prevent overlapping sub-agent dispatc
 
 ```bash
 # claim
-npx tsx skills/monitor/scripts/monitor-dispatch-queue.ts \
+npx tsx .agents/skills/monitor/scripts/monitor-dispatch-queue.ts \
   --claim "lib/db.ts,lib/cache.ts" --agent-id agent_42
 
 # release
-npx tsx skills/monitor/scripts/monitor-dispatch-queue.ts \
+npx tsx .agents/skills/monitor/scripts/monitor-dispatch-queue.ts \
   --release --agent-id agent_42
 ```
 
@@ -97,7 +97,7 @@ npx tsx skills/monitor/scripts/monitor-dispatch-queue.ts \
 Appends a structured NDJSON event to the durable session log.
 
 ```bash
-npx tsx skills/monitor/scripts/monitor-session-log.ts \
+npx tsx .agents/skills/monitor/scripts/monitor-session-log.ts \
   triage '{"class":"EADDRINUSE","verdict":"persistent-warn"}'
 ```
 
@@ -119,7 +119,7 @@ npx tsx skills/monitor/scripts/monitor-session-log.ts \
 Reads the session log and prints a consolidated markdown report.
 
 ```bash
-npx tsx skills/monitor/scripts/monitor-report.ts \
+npx tsx .agents/skills/monitor/scripts/monitor-report.ts \
   .tmp/monitor-2026-05-02T02-42-33.ndjson 1746184953
 ```
 

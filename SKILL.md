@@ -36,14 +36,14 @@ For a direct command lookup, see [Quick Commands](#quick-commands) below.
 
 ```bash
 # Generate a grep pattern from recent log errors
-npx tsx skills/monitor/scripts/monitor-suggest-filter.ts /path/to/log 500
+npx tsx .agents/skills/monitor/scripts/monitor-suggest-filter.ts /path/to/log 500
 
 # Classify a single log line
 echo "ERROR connect ECONNREFUSED 127.0.0.1:3001" \
-  | npx tsx skills/monitor/scripts/monitor-classify-error.ts
+  | npx tsx .agents/skills/monitor/scripts/monitor-classify-error.ts
 
 # Claim file locks before dispatching a sub-agent
-npx tsx skills/monitor/scripts/monitor-dispatch-queue.ts \
+npx tsx .agents/skills/monitor/scripts/monitor-dispatch-queue.ts \
   --claim "lib/db.ts,lib/cache.ts" --agent-id agent_42
 ```
 

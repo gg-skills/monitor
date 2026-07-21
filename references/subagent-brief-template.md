@@ -62,13 +62,13 @@ Report back under 80 words:
 Before dispatching, claim file locks:
 
 ```bash
-npx tsx skills/monitor/scripts/monitor-dispatch-queue.ts \
+npx tsx .agents/skills/monitor/scripts/monitor-dispatch-queue.ts \
   --claim "<file1>,<file2>" --agent-id <unique-id>
 ```
 
 Release after the agent verifies and reports back:
 
 ```bash
-npx tsx skills/monitor/scripts/monitor-dispatch-queue.ts \
+npx tsx .agents/skills/monitor/scripts/monitor-dispatch-queue.ts \
   --release --agent-id <unique-id>
 ```

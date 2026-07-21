@@ -154,7 +154,7 @@ cp .env.example .env
 # Edit MONITOR_QUEUE_DIR or MONITOR_SESSION_LOG if needed.
 
 # 2. (Optional) pre-generate a grep pattern from existing logs
-npx tsx skills/monitor/scripts/monitor-suggest-filter.ts /path/to/log 500
+npx tsx .agents/skills/monitor/scripts/monitor-suggest-filter.ts /path/to/log 500
 
 # 3. In Claude Code, say:
 #    "Monitor the ingestion log at /var/log/ingest.log and fix anything that breaks."
@@ -162,10 +162,10 @@ npx tsx skills/monitor/scripts/monitor-suggest-filter.ts /path/to/log 500
 
 # 4. Classify a noisy line manually
 echo "ERROR connect ECONNREFUSED 127.0.0.1:3001" \
-  | npx tsx skills/monitor/scripts/monitor-classify-error.ts
+  | npx tsx .agents/skills/monitor/scripts/monitor-classify-error.ts
 
 # 5. View the session report after the run
-npx tsx skills/monitor/scripts/monitor-report.ts \
+npx tsx .agents/skills/monitor/scripts/monitor-report.ts \
   .tmp/monitor-2026-05-16T14-00-00.ndjson
 ```
 
