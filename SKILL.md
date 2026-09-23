@@ -36,6 +36,7 @@ For a direct command lookup, see [Quick Commands](#quick-commands) below.
 
 ```bash
 # Generate a grep pattern from recent log errors
+# Runner alternatives: bunx tsx / pnpm dlx tsx / deno run -A npm:tsx / node --import tsx / yarn dlx tsx
 npx tsx .agents/skills/monitor/scripts/monitor-suggest-filter.ts /path/to/log 500
 
 # Classify a single log line
@@ -399,3 +400,5 @@ files support the operating loop:
 | `script-inventory.md` | Full CLI signatures, flags, env vars, exit codes, and examples for all five companion scripts. |
 | `session-log-format.md` | NDJSON event schema consumed by `monitor-session-log.ts` and `monitor-report.ts`. |
 | `subagent-brief-template.md` | Copy-ready template for step-6 sub-agent dispatches, including file-lock commands. |
+
+[^rt]: `npx tsx` accepts any standard runner — `bunx tsx`, `pnpm dlx tsx`, `deno run -A npm:tsx`, `node --import tsx`, or `yarn dlx tsx`. The first five auto-fetch `tsx` on demand; only `node --import tsx` requires `tsx` to be installed locally first (`npm i -D tsx`, or `npm i -g tsx` if you cannot reach the npm registry). Bun users can also skip `tsx` entirely and run TypeScript directly via `bun <script>`. Pick whichever your project ships. The canonical runtime decision table lives in the `skills-manager` skill under `Runtime Selection` (only available when working in the full `gg-skills` monorepo).
