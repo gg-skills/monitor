@@ -26,7 +26,7 @@ mkdir -p ~/.claude/skills
 git -C ~/.claude/skills clone git@github.com:gg-skills/monitor.git
 ```
 
-Restart your agent or reload skills after installation. See the parent [`skills` catalog repo](https://github.com/gg-skills/skills) for the full catalog.
+Restart your agent or reload skills after installation. Browse public skills on the [GG Skills organization profile](https://github.com/gg-skills).
 
 ## When to use
 
@@ -182,4 +182,4 @@ npx tsx .agents/skills/monitor/scripts/monitor-report.ts \
 - The skill is not a passive log viewer. It acts on events — heartbeats stop only when the watched operation ends or the user says so.
 - Two sub-agents must not touch overlapping files in parallel; the dispatch queue enforces this via lock files. If a previous agent crashed and left stale locks, remove `.tmp/monitor-dispatch-queue/*.lock` manually.
 - The `Monitor` tool suppresses events when output rate is too high. If you see `[N events suppressed]`, the grep filter is too loose — stop, retighten with `monitor-suggest-filter.ts`, and re-arm.
-- GG-category skills are gitignored from the parent repo and maintained as standalone GitHub repositories. This skill follows the same pattern as `skills-manager`, `extractor`, and `claude-designer`.
+- GG-category skills are gitignored from the parent repo and maintained as standalone GitHub repositories. This skill follows the same pattern as `extractor` and `claude-designer`.
